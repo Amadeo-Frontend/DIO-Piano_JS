@@ -54,6 +54,7 @@ header .column span {
   user-select: none;
   position: relative;
   text-transform: uppercase;
+  transition: transform 0.1s, box-shadow 0.1s;
 }
 
 .piano-keys .white {
@@ -82,11 +83,13 @@ header .column span {
 }
 
 .piano-keys .white.active {
+  transform: translateY(5px);
   box-shadow: inset -5px 5px 20px rgba(0, 0, 0, 0.2);
   background: linear-gradient(to bottom #fff 0%, #eee 100%);
 }
 
 .piano-keys .black.active {
+  transform: translateY(5px);
   box-shadow: inset -5px 5px 10px rgba(255, 255, 255, 0.1);
   background: linear-gradient(to bottom #000, #434343);
 }
@@ -293,4 +296,23 @@ header .column span {
 
 .slider:hover .level {
   height: calc(var(--slider-height) * 2);
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .piano-keys .key.white {
+    width: 40px;
+    height: 140px;
+  }
+
+  .piano-keys .key.black {
+    width: 25px;
+    height: 80px;
+    margin: 0 -12.5px;
+  }
 }
